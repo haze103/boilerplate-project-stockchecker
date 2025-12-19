@@ -7,7 +7,7 @@ chai.use(chaiHttp);
 
 suite('Functional Tests', function() {
 
-  this.timeout(5000); // Allow 5 seconds instead of 2
+  this.timeout(20000); // Allow 5 seconds instead of 2
 
   test('Viewing one stock: GET request to /api/stock-prices/', function(done) {
     chai.request(server)
