@@ -1,5 +1,6 @@
 'use strict';
 require('dotenv').config();
+console.log("My Database URL is:", process.env.DB);
 const express     = require('express');
 const bodyParser  = require('body-parser');
 const cors        = require('cors');
@@ -8,6 +9,9 @@ const helmet      = require('helmet'); // Added
 const apiRoutes         = require('./routes/api.js');
 const fccTestingRoutes  = require('./routes/fcctesting.js');
 const runner            = require('./test-runner');
+
+const mongoose = require('mongoose');
+mongoose.connect(process.env.DB); // Connect to your MongoDB
 
 const app = express();
 
